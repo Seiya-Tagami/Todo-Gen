@@ -11,7 +11,7 @@ export default component$(() => {
       <div class="p-4">
         <div class="flex items-center gap-2 text-2xl">
           <p>Generate in</p>
-          <select name="lang_select" id="" class='p-2 bg-gray-200 rounded-lg text-teal-500' onChange$={(e) => lang.value = e.target.value}>
+          <select name="lang_select" class='p-2 bg-gray-200 rounded-lg text-teal-500' onChange$={(e) => lang.value = e.target.value}>
             <option value="ja">Japanese</option>
             <option value="en">English</option>
           </select>
