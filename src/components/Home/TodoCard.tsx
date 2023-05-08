@@ -13,7 +13,7 @@ export default component$<ITodoCardProps>((props) => {
 
   return (
     <Form class="w-full m-h-full p-6 bg-white border border-gray-200 rounded-lg shadow" action={action}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{text}</h5>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{text ? text : "Let's find what to do next!"}</h5>
       <input type="text" name="text" value={text as FormDataEntryValue} hidden />
       {type && (
         <>
@@ -22,7 +22,7 @@ export default component$<ITodoCardProps>((props) => {
         </>
       )}
       <div class="flex justify-end">
-        {text !== "Let's find what to do next!" && (
+        {text && (
           <button class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-teal-600 rounded-lg hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:bg-gray-400" type="submit" disabled={preventAddTwice.value} onClick$={() => {
             preventAddTwice.value = true;
           }}>

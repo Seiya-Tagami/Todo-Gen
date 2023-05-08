@@ -60,7 +60,7 @@ export const genTodoFromAPI = async (lang: string) => {
 }
 
 export default component$(() => {
-  const todoData = useStore<{ text: Promise<string> | string | undefined, type: Promise<string> | string | undefined, lang: string }>({ text: "Let's find what to do next!", type: "", lang: "ja" })
+  const todoData = useStore<{ text: Promise<string> | string | undefined, type: Promise<string> | string | undefined, lang: string }>({ text: "", type: "", lang: "ja" })
   const loading = useSignal<boolean>(false)
 
   return (
