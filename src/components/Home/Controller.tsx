@@ -78,6 +78,7 @@ export default component$(() => {
           <option value="ja">Japanese</option>
           <option value="en">English</option>
           <option value="zh-Hans">Chinese Simplified</option>
+          <option value="fr">French</option>
         </select>
       </div>
       <div class={"w-full h-[200px] flex justify-center items-center mt-8"}>
