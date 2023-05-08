@@ -1,11 +1,13 @@
 import { component$ } from "@builder.io/qwik";
-import { useListLoader } from "~/routes";
+import { Form } from "@builder.io/qwik-city";
+import { useDeleteTodoItemAction, useListLoader } from "~/routes";
 
 export default component$(() => {
   const todoList = useListLoader();
+  const action = useDeleteTodoItemAction();
   return (
     <>
-      <div class="w-[520px] mx-auto overflow-x-auto shadow-md sm:rounded-lg">
+      <div class="max-w-[520px] mx-auto shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left text-gray-500">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
@@ -16,7 +18,7 @@ export default component$(() => {
                 Category
               </th>
               <th scope="col" class="px-6 py-3">
-                <span class="sr-only">Edit</span>
+                <span class="sr-only"></span>
               </th>
             </tr>
           </thead>
@@ -32,7 +34,10 @@ export default component$(() => {
                     {item.type}
                   </td>
                   <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-blue-600 hover:underline">Edit</a>
+                    <Form action={action}>
+                      <input type="text" name="id" value={item.id} hidden />
+                      <button class="font-medium text-blue-600 hover:underline">remove</button>
+                    </Form>
                   </td>
                 </tr>
               ))}

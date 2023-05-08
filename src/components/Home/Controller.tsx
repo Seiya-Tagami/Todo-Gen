@@ -64,7 +64,7 @@ export default component$(() => {
   const loading = useSignal<boolean>(false)
 
   return (
-    <div class='w-[520px] mx-auto mt-8'>
+    <div class='max-w-[520px] mx-auto mt-8'>
       <div class="flex items-center gap-2 text-2xl">
         <button class="p-2 text-3xl font-semibold text-white bg-purple-500 rounded-md italic hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-300" onClick$={async () => {
           loading.value = true;

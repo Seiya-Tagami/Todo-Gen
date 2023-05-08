@@ -4,6 +4,7 @@ import Controller from '~/components/Home/Controller';
 import TodoList from '~/components/Home/TodoList';
 
 interface TodoItem {
+  id: string
   text: string
   type: string
 }
@@ -12,7 +13,7 @@ export const useListLoader = routeLoader$(() => {
   return todoList;
 });
 
-export const todoList: TodoItem[] = [];
+export let todoList: TodoItem[] = [];
 export const useAddToTodoListAction = routeAction$(
   (item) => {
     todoList.push(item);
@@ -21,10 +22,21 @@ export const useAddToTodoListAction = routeAction$(
     };
   },
   zod$({
+    id: z.string(),
     text: z.string().trim().min(1),
     type: z.string().trim().min(1)
   })
 );
+
+export const useDeleteTodoItemAction = routeAction$(
+  (item) => {
+    const newTodoList = todoList.filter(todo => todo.id !== item.id);
+    todoList = newTodoList;
+    return {
+      success: true,
+    };
+  }
+)
 
 export default component$(() => {
   return (
