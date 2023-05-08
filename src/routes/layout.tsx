@@ -12,7 +12,7 @@ export const useServerTimeLoader = routeLoader$(() => {
 export default component$(() => {
   return (
     <div class="w-full px-4">
-      <div class="mx-auto mt-2  max-w-[1400px]">
+      <div class="mx-auto mt-2  max-w-[1200px]">
         <Header />
         <main>
           <Slot />
