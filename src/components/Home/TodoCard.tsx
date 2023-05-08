@@ -13,7 +13,7 @@ export default component$<ITodoCardProps>((props) => {
 
   return (
     <Form class="w-full m-h-full p-6 bg-white border border-gray-200 rounded-lg shadow" action={action}>
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{text ? text : "Let's find what to do next!"}</h5>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{text ? text : "Let's find what to do next!"}</h5>
       <input type="text" name="text" value={text as FormDataEntryValue} hidden />
       {type && (
         <>
